@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Nexus — Personal Blog
 
-## Project info
+A modern, accessible personal blog built with React. Features a magazine-style homepage with featured articles, editor’s picks, trending posts, and a masonry layout, plus category pages, search, and dark/light theme.
 
-**URL**: https://lovable.dev/projects/65c2f9ed-16cc-427a-af29-7a59108fd09a
+## Features
 
-## How can I edit this code?
+- **Homepage**: Featured article, Editor’s Pick, Trending block, Masonry block, and full blog grid
+- **Categories**: All Posts, Business, Technology, Podcast
+- **Blog posts**: Individual post pages with related posts and table of contents
+- **Search**: Full-site search
+- **Pages**: About, Contact, Terms, Privacy, Sitemap
+- **Theme**: Light/dark mode (system-aware)
+- **Accessibility**: Skip link, reading progress, semantic HTML, ARIA where needed
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Vite** — Build tool and dev server
+- **React 18** — UI
+- **TypeScript** — Typing
+- **React Router** — Client-side routing
+- **TanStack Query** — Data fetching/caching
+- **Tailwind CSS** — Styling
+- **shadcn/ui** — UI components (Radix primitives)
+- **next-themes** — Theme switching
+- **Lucide React** — Icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/65c2f9ed-16cc-427a-af29-7a59108fd09a) and start prompting.
+## Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm (comes with Node) or [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) for managing Node versions
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Getting Started
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/remix-of-personal-blog-brthrs.git
+cd remix-of-personal-blog-brthrs
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts
 
-**Use GitHub Codespaces**
+| Command        | Description                    |
+|----------------|--------------------------------|
+| `npm run dev`  | Start dev server (Vite)        |
+| `npm run build`| Production build               |
+| `npm run build:dev` | Development-mode build   |
+| `npm run preview`  | Preview production build   |
+| `npm run lint`     | Run ESLint                 |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # Reusable UI (Header, Footer, BlogCard, etc.)
+├── components/ui/  # shadcn/ui primitives
+├── pages/          # Route pages (Index, BlogDetail, About, etc.)
+├── hooks/          # Custom hooks
+├── lib/            # Utilities
+├── styles/         # Global/print CSS
+├── App.tsx         # App shell, routing, providers
+└── main.tsx        # Entry point
+```
 
-This project is built with:
+## Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Build the app:
 
-## How can I deploy this project?
+```sh
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/65c2f9ed-16cc-427a-af29-7a59108fd09a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Serve the `dist/` output with any static host (Vercel, Netlify, GitHub Pages, etc.). Configure the host to support client-side routing (e.g. redirect all routes to `index.html` for SPA fallback).

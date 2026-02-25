@@ -15,7 +15,7 @@ const AllPosts = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   useDocumentHead({
     title: 'All Posts',
-    description: 'Browse all articles on Nexus — fashion, technology, business, lifestyle, and more.',
+    description: 'Browse all articles on Blogify — fashion, technology, business, lifestyle, and more.',
     canonicalPath: '/posts',
   });
 

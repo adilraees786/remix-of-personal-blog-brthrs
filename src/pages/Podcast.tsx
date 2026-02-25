@@ -12,7 +12,7 @@ const Podcast = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   useDocumentHead({
     title: 'Podcast',
-    description: 'Nexus Podcast — conversations on digital storytelling, branding, and lifestyle.',
+    description: 'Blogify Podcast — conversations on digital storytelling, branding, and lifestyle.',
     canonicalPath: '/podcast',
   });
 

@@ -1,4 +1,4 @@
-# Nexus — Personal Blog
+# Blogify — Personal Blog
 
 A modern, accessible personal blog built with React. Features a magazine-style homepage with featured articles, editor’s picks, trending posts, and a masonry layout, plus category pages, search, and dark/light theme.
 

@@ -11,7 +11,7 @@ const Technology = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   useDocumentHead({
     title: 'Technology',
-    description: 'Technology articles on Nexus — AI, blockchain, web development, cybersecurity, and more.',
+    description: 'Technology articles on Blogify — AI, blockchain, web development, cybersecurity, and more.',
     canonicalPath: '/technology',
   });
 

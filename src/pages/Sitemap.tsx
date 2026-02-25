@@ -25,7 +25,7 @@ const BLOG_SLUGS = [
 const Sitemap = () => {
   useDocumentHead({
     title: 'Sitemap',
-    description: 'Complete sitemap of Nexus blog — all pages and articles.',
+    description: 'Complete sitemap of Blogify blog — all pages and articles.',
     canonicalPath: '/sitemap',
   });
 
@@ -36,7 +36,7 @@ const Sitemap = () => {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Sitemap</h1>
           <p className="text-muted-foreground mb-8">
-            Browse all pages and articles on Nexus. Search engines can use our{' '}
+            Browse all pages and articles on Blogify. Search engines can use our{' '}
             <a href="/sitemap.xml" className="text-primary underline underline-offset-2">
               XML sitemap
             </a>

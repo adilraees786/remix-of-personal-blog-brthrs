@@ -11,7 +11,7 @@ const Business = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   useDocumentHead({
     title: 'Business',
-    description: 'Business articles and insights on Nexus — strategy, leadership, remote work, and entrepreneurship.',
+    description: 'Business articles and insights on Blogify — strategy, leadership, remote work, and entrepreneurship.',
     canonicalPath: '/business',
   });
 

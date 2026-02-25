@@ -113,7 +113,7 @@ const blogPosts = {
     category: "TECHNOLOGY",
     date: "SEP 12, 2023",
     readTime: "7 min read",
-    author: "NEXUS",
+    author: "Blogify",
     authorAvatar: "/placeholder-avatar.jpg",
     heroImage: techPost,
     content: `
@@ -154,7 +154,7 @@ const blogPosts = {
     category: "BUSINESS",
     date: "SEP 10, 2023",
     readTime: "6 min read",
-    author: "NEXUS",
+    author: "Blogify",
     authorAvatar: "/placeholder-avatar.jpg",
     heroImage: businessPost,
     content: `
@@ -240,7 +240,7 @@ const blogPosts = {
     category: "GENERAL",
     date: "SEP 15, 2023",
     readTime: "3 min read",
-    author: "NEXUS",
+    author: "Blogify",
     authorAvatar: "/placeholder-avatar.jpg",
     heroImage: fashionPost,
     content: `<p>This blog post could not be found. Please check the URL or return to the homepage.</p>`
@@ -316,7 +316,7 @@ const BlogDetail = () => {
     title: post.title,
     description: post.title === blogPosts.default.title
       ? 'Blog post not found.'
-      : `Read "${post.title}" on Nexus Blog. ${post.category} — ${post.readTime}.`,
+      : `Read "${post.title}" on Blogify Blog. ${post.category} — ${post.readTime}.`,
     canonicalPath: `/blog/${slug || ''}`,
   });
 
@@ -355,7 +355,7 @@ const BlogDetail = () => {
                   
                   <SocialShare 
                     title={post.title}
-                    description={`Read "${post.title}" on Nexus Blog`}
+                    description={`Read "${post.title}" on Blogify Blog`}
                   />
                 </div>
               </header>

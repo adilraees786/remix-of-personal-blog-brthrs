@@ -14,7 +14,7 @@ export interface SeoOptions {
 }
 
 const defaultDescription =
-  'Explore the latest in fashion trends, technology insights, business strategies, and lifestyle inspiration on Nexus personal blog.';
+  'Explore the latest in fashion trends, technology insights, business strategies, and lifestyle inspiration on Blogify personal blog.';
 const defaultOgImage =
   'https://storage.googleapis.com/gpt-engineer-file-uploads/8jp6KAG7qJZgRp4lIs04ZYXqlhL2/social-images/social-1758609028260-download.jpg';
 
@@ -38,7 +38,7 @@ function applyDocumentHead(options: SeoOptions): void {
     noIndex = false,
   } = options;
 
-  const fullTitle = title.includes('Nexus') ? title : `${title} | Nexus Blog`;
+  const fullTitle = title.includes('Blogify') ? title : `${title} | Blogify Blog`;
   document.title = fullTitle;
 
   const desc = getOrCreateMeta('description', 'name');

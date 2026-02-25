@@ -22,7 +22,7 @@ const SearchResults = () => {
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   useDocumentHead({
     title: 'Search',
-    description: 'Search articles on Nexus Blog — fashion, technology, business, lifestyle.',
+    description: 'Search articles on Blogify Blog — fashion, technology, business, lifestyle.',
     canonicalPath: '/search',
   });
   

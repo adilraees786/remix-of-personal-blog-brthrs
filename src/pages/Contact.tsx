@@ -13,7 +13,7 @@ import { useDocumentHead } from '@/lib/seo';
 const Contact = () => {
   useDocumentHead({
     title: 'Contact',
-    description: 'Get in touch with Nexus Blog. Send a message or find our contact details.',
+    description: 'Get in touch with Blogify Blog. Send a message or find our contact details.',
     canonicalPath: '/contact',
   });
   const [formData, setFormData] = useState({
@@ -152,7 +152,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground">Email</h3>
-                      <p className="text-muted-foreground">hello@nexusblog.com</p>
+                      <p className="text-muted-foreground">hello@Blogifyblog.com</p>
                       <p className="text-sm text-muted-foreground">
                         We typically respond within 24 hours
                       </p>

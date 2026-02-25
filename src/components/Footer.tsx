@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container-blog py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h2 className="text-lg font-bold text-foreground">nexus</h2>
+            <h2 className="text-lg font-bold text-foreground">Blogify</h2>
             <p className="text-sm text-muted-foreground">
               A personal blog exploring fashion, technology, business, and lifestyle trends.
             </p>
@@ -53,7 +53,7 @@ const Footer = () => {
         
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2023 Nexus Blog. All rights reserved.
+            © 2026 Blogify. All rights reserved.
           </p>
         </div>
       </div>

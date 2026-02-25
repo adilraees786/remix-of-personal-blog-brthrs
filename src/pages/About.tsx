@@ -3,8 +3,14 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Calendar, Heart } from 'lucide-react';
+import { useDocumentHead } from '@/lib/seo';
 
 const About = () => {
+  useDocumentHead({
+    title: 'About',
+    description: 'About Nexus — exploring the intersection of fashion, technology, business, and lifestyle.',
+    canonicalPath: '/about',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

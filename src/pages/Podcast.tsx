@@ -3,12 +3,18 @@ import Footer from '@/components/Footer';
 import BlogCard from '@/components/BlogCard';
 import PageFilter, { Post } from '@/components/PageFilter';
 import { useState } from 'react';
+import { useDocumentHead } from '@/lib/seo';
 import lifestylePost from '@/assets/lifestyle-post.jpg';
 import fashionPost from '@/assets/fashion-post.jpg';
 import workLifestyle from '@/assets/work-lifestyle.jpg';
 
 const Podcast = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  useDocumentHead({
+    title: 'Podcast',
+    description: 'Nexus Podcast — conversations on digital storytelling, branding, and lifestyle.',
+    canonicalPath: '/podcast',
+  });
 
   const podcastEpisodes: Post[] = [
     {

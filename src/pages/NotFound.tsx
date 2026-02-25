@@ -3,9 +3,15 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useDocumentHead } from "@/lib/seo";
 
 const NotFound = () => {
   const location = useLocation();
+  useDocumentHead({
+    title: 'Page Not Found',
+    description: 'The page you are looking for could not be found.',
+    noIndex: true,
+  });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

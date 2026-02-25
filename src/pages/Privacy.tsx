@@ -1,7 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useDocumentHead } from '@/lib/seo';
 
 const Privacy = () => {
+  useDocumentHead({
+    title: 'Privacy Policy',
+    description: 'Privacy Policy for Nexus Blog. How we collect, use, and protect your information.',
+    canonicalPath: '/privacy',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

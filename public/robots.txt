@@ -1,3 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap for search engines
+Sitemap: https://personal-blog-brthrs.netlify.app/sitemap.xml
+
+# Common crawlers (optional; * already allows all)
 User-agent: Googlebot
 Allow: /
 
@@ -8,7 +16,4 @@ User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /

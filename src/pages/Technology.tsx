@@ -3,11 +3,17 @@ import Footer from '@/components/Footer';
 import BlogCard from '@/components/BlogCard';
 import PageFilter, { Post } from '@/components/PageFilter';
 import { useState } from 'react';
+import { useDocumentHead } from '@/lib/seo';
 import techPost from '@/assets/tech-post.jpg';
 import fashionLifestyle from '@/assets/fashion-lifestyle.jpg';
 
 const Technology = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  useDocumentHead({
+    title: 'Technology',
+    description: 'Technology articles on Nexus — AI, blockchain, web development, cybersecurity, and more.',
+    canonicalPath: '/technology',
+  });
 
   const techPosts: Post[] = [
     {

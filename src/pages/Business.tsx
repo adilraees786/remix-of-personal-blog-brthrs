@@ -3,11 +3,17 @@ import Footer from '@/components/Footer';
 import BlogCard from '@/components/BlogCard';
 import PageFilter, { Post } from '@/components/PageFilter';
 import { useState } from 'react';
+import { useDocumentHead } from '@/lib/seo';
 import businessPost from '@/assets/business-post.jpg';
 import workLifestyle from '@/assets/work-lifestyle.jpg';
 
 const Business = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  useDocumentHead({
+    title: 'Business',
+    description: 'Business articles and insights on Nexus — strategy, leadership, remote work, and entrepreneurship.',
+    canonicalPath: '/business',
+  });
 
   const businessPosts: Post[] = [
     {

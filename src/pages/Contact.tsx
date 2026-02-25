@@ -8,8 +8,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, MessageSquare, Send, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { useDocumentHead } from '@/lib/seo';
 
 const Contact = () => {
+  useDocumentHead({
+    title: 'Contact',
+    description: 'Get in touch with Nexus Blog. Send a message or find our contact details.',
+    canonicalPath: '/contact',
+  });
   const [formData, setFormData] = useState({
     name: '',
     email: '',

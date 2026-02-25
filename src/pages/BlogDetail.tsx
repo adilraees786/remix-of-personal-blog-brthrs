@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Header from '@/components/Header';
+import { useDocumentHead } from '@/lib/seo';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -310,6 +311,14 @@ const allPosts = [
 const BlogDetail = () => {
   const { slug } = useParams();
   const post = blogPosts[slug as keyof typeof blogPosts] || blogPosts.default;
+
+  useDocumentHead({
+    title: post.title,
+    description: post.title === blogPosts.default.title
+      ? 'Blog post not found.'
+      : `Read "${post.title}" on Nexus Blog. ${post.category} — ${post.readTime}.`,
+    canonicalPath: `/blog/${slug || ''}`,
+  });
 
   return (
     <div className="min-h-screen bg-background">

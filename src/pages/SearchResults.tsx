@@ -1,5 +1,6 @@
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useMemo } from 'react';
+import { useDocumentHead } from '@/lib/seo';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BlogCard from '@/components/BlogCard';
@@ -19,6 +20,11 @@ const SearchResults = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
+  useDocumentHead({
+    title: 'Search',
+    description: 'Search articles on Nexus Blog — fashion, technology, business, lifestyle.',
+    canonicalPath: '/search',
+  });
   
   // All posts data combined from different pages
   const allPosts = useMemo(() => [

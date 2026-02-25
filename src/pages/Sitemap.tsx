@@ -1,66 +1,76 @@
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { useDocumentHead } from '@/lib/seo';
+
+const SITE_LINKS = [
+  { path: '/', label: 'Home' },
+  { path: '/posts', label: 'All Posts' },
+  { path: '/business', label: 'Business' },
+  { path: '/technology', label: 'Technology' },
+  { path: '/podcast', label: 'Podcast' },
+  { path: '/about', label: 'About' },
+  { path: '/contact', label: 'Contact' },
+  { path: '/terms', label: 'Terms of Use' },
+  { path: '/privacy', label: 'Privacy Policy' },
+];
+
+const BLOG_SLUGS = [
+  { path: '/blog/rise-of-fashion-blogging', label: 'The Rise of Fashion Blogging: The Role of Influencers in the Industry' },
+  { path: '/blog/self-driving-cars-everything-you-need-to-know', label: 'Self-Driving Cars: Everything You Need to Know' },
+  { path: '/blog/the-importance-of-corporate-social-responsibility', label: 'The Importance of Corporate Social Responsibility' },
+  { path: '/blog/mindful-living-finding-balance-in-a-busy-world', label: 'Mindful Living: Finding Balance in a Busy World' },
+];
 
 const Sitemap = () => {
-  useEffect(() => {
-    // Set the content type to XML
-    document.title = 'Sitemap';
-  }, []);
-
-  const sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nexusblog.lovable.app/</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/posts</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/business</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/technology</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/podcast</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/shop</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/privacy</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://nexusblog.lovable.app/terms</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-</urlset>`;
+  useDocumentHead({
+    title: 'Sitemap',
+    description: 'Complete sitemap of Nexus blog — all pages and articles.',
+    canonicalPath: '/sitemap',
+  });
 
   return (
-    <div style={{ fontFamily: 'monospace', whiteSpace: 'pre-wrap', padding: '20px' }}>
-      {sitemapXML}
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main id="main-content" className="container-blog py-12">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Sitemap</h1>
+          <p className="text-muted-foreground mb-8">
+            Browse all pages and articles on Nexus. Search engines can use our{' '}
+            <a href="/sitemap.xml" className="text-primary underline underline-offset-2">
+              XML sitemap
+            </a>
+            .
+          </p>
+
+          <section className="mb-10" aria-labelledby="pages-heading">
+            <h2 id="pages-heading" className="text-xl font-semibold text-foreground mb-4">Pages</h2>
+            <ul className="space-y-2">
+              {SITE_LINKS.map(({ path, label }) => (
+                <li key={path}>
+                  <Link to={path} className="text-primary hover:underline underline-offset-2">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section aria-labelledby="articles-heading">
+            <h2 id="articles-heading" className="text-xl font-semibold text-foreground mb-4">Articles</h2>
+            <ul className="space-y-2">
+              {BLOG_SLUGS.map(({ path, label }) => (
+                <li key={path}>
+                  <Link to={path} className="text-primary hover:underline underline-offset-2">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };

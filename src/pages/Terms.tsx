@@ -1,7 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useDocumentHead } from '@/lib/seo';
 
 const Terms = () => {
+  useDocumentHead({
+    title: 'Terms of Service',
+    description: 'Terms of Service for Nexus Blog. Read our usage and licensing terms.',
+    canonicalPath: '/terms',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

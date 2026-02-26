@@ -1,5 +1,25 @@
 import { Link } from 'react-router-dom';
 
+const categories = [
+  { label: 'Fashion', to: '/posts' },
+  { label: 'Technology', to: '/technology' },
+  { label: 'Business', to: '/business' },
+  { label: 'Lifestyle', to: '/posts' },
+];
+
+const quickLinks = [
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+  { label: 'Privacy', to: '/privacy' },
+  { label: 'Terms', to: '/terms' },
+];
+
+const connectLinks = [
+  { label: 'Facebook', ariaLabel: 'Follow us on Facebook' },
+  { label: 'Twitter', ariaLabel: 'Follow us on Twitter' },
+  { label: 'Instagram', ariaLabel: 'Follow us on Instagram' },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-muted border-t border-border" role="contentinfo">
@@ -15,38 +35,30 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-medium text-foreground">Categories</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/posts" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Fashion</Link></li>
-              <li><Link to="/technology" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Technology</Link></li>
-              <li><Link to="/business" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Business</Link></li>
-              <li><Link to="/posts" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Lifestyle</Link></li>
+              {categories.map(({ label, to }) => (
+                <li key={to + label}><Link to={to} className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">{label}</Link></li>
+              ))}
             </ul>
           </div>
           
             <div className="space-y-4">
               <h3 className="font-medium text-foreground">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">About</Link></li>
-                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Contact</Link></li>
-                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Privacy</Link></li>
-                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Terms</Link></li>
+                {quickLinks.map(({ label, to }) => (
+                  <li key={to}><Link to={to} className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">{label}</Link></li>
+                ))}
               </ul>
             </div>
           
           <div className="space-y-4">
             <h3 className="font-medium text-foreground">Connect</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" aria-label="Follow us on Facebook">
-                <span className="sr-only">Facebook</span>
-                Facebook
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" aria-label="Follow us on Twitter">
-                <span className="sr-only">Twitter</span>
-                Twitter
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" aria-label="Follow us on Instagram">
-                <span className="sr-only">Instagram</span>
-                Instagram
-              </a>
+              {connectLinks.map(({ label, ariaLabel }) => (
+                <a key={label} href="#" className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" aria-label={ariaLabel}>
+                  <span className="sr-only">{label}</span>
+                  {label}
+                </a>
+              ))}
             </div>
           </div>
         </div>

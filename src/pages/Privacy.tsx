@@ -113,7 +113,7 @@ const Privacy = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground">
-                Last updated: September 2024
+                Last updated: February 2026
               </p>
             </div>
           </div>

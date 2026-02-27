@@ -15,7 +15,7 @@ const quickLinks = [
 ];
 
 const connectLinks = [
-  { label: 'Facebook', ariaLabel: 'Follow us on Facebook' },
+  { label: 'Facebook',  ariaLabel: 'Follow us on Facebook' },
   { label: 'Twitter', ariaLabel: 'Follow us on Twitter' },
   { label: 'Instagram', ariaLabel: 'Follow us on Instagram' },
 ];
